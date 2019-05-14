@@ -1,0 +1,24 @@
+﻿-----------
+Filmų nuoma
+-----------
+
+Sukurti sistemą skirtą filmų nuomos punkto administravimui (REST API).
+Tikslas: turėti galimybę administruoti filmų kolekciją ir skaičiuoti nuomos mokesčius.
+
+Klientas, užsisakantis filmą, nurodo dienų skaičių ir apmoka užsakymą iš anksto. 
+Galutinė kaina yra skaičiuojama pagal filmo tipą ir nuomos laikotarpį.
+Jei filmas grąžinamas vėliau, suma už papildomas dienas paskaičiuojama ir apmokama grąžinimo metu.
+
+Saugykloje saugomi trijų tipų filmai: nauji, įprasti, seni. Kainos skaičiuojamos taip:
+ - Naujiems: <premium kaina> * <dienų skaičius>.
+ - Įprastiems: (<bazinė kaina> už 3 pirmas dienas) + (<bazinė kaina> * <papildomų dienų skaičius>).
+ - Seniems - (<bazinė kaina> už 5 pirmas dienas) + (<bazinė kaina> * <papildomų dienų skaičius>)
+
+Pagrindinis API turėtų suteikti galimybę atlikti tokias operacijas, kaip:
+ - Išsinuomuoti vieną ar kelis filmus ir suskaičiuoti galutinę kainą.
+ - Grąžinti filmus ir suskaičiuoti papildomus mokesčius.
+ - Apmokėti užsakymą/grąžinimą.
+
+Papildomai galite sukurti administravimo API:
+ - Filmų pridėjimas/keitimas/trynimas.
+ - Kainų administravimas.
