@@ -1,16 +1,21 @@
 package com.tomasdutkus.movierental.service;
 
 import com.tomasdutkus.movierental.model.User;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface UserService {
 
-    public List<User> findAll();
+    public User registerUser(User user);
 
-    public User findById(Long id);
+    public Page<User> getAllUsers(PageRequest pageRequest);
 
-    public void save(User user);
+    public User getUserById(Long id);
 
-    public void deleteById(Long id);
+    public User getUserByEmailId(String emailid);
+
+    public User updateUser(User user, Long id);
+
+    public Boolean deleteUser(Long id);
+
 }
